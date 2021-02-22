@@ -23,6 +23,7 @@ spec:
       targetPort: http
       protocol: TCP
       name: http
+      nodePort: {{ .Values.service.nodePort }}
   selector:
     app: {{ template "sonarqube.name" . }}
     release: {{ .Release.Name }}
